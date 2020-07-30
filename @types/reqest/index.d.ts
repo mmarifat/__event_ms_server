@@ -1,11 +1,11 @@
 import {IUser} from "../../src/interfaces/IUser";
-import {User} from "../../src/models/User";
+import {Users} from "../../src/models/Users";
 
 declare global {
 	namespace Express {
 
 		interface Request {
-			user?: IUser | null | User;
+			user?: IUser | null | Users;
 			key?: string
 		}
 

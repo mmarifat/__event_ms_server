@@ -19,7 +19,7 @@ import {Collections} from "../config/util";
 		minimize: false
 	}
 })
-export class Category implements ICategory {
+export class Categories implements ICategory {
 	@ObjectID("_id")
 	_id: Types.ObjectId;
 

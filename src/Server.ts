@@ -7,7 +7,6 @@ import * as cors from "cors";
 import "@tsed/multipartfiles";
 import "@tsed/mongoose";
 import * as dt from 'dotenv';
-import * as fs from 'fs';
 
 dt.config()
 const rootDir = __dirname;
@@ -16,7 +15,7 @@ console.log(process.env.NODE_ENV);
 @Configuration({
 	rootDir,
 	acceptMimes: ["application/json"],
-	httpsPort: process.env.NODE_ENV === 'production' ? 443 : process.env.HTTPs_PORT,
+	httpsPort: process.env.NODE_ENV === 'production' ? 443 : process.env.HTTPS_PORT,
 	httpPort: process.env.HTTP_PORT,
 	mount: {
 		"/": `${rootDir}/controllers/*`
@@ -66,24 +65,24 @@ export class Server {
 
 	$beforeRoutesInit(): any {
 		this.app
-				.use(cors({
-					credentials: true,
-					origin: '*',
-					allowedHeaders: '*',
-					exposedHeaders: '*'
-				}))
-				.use(GlobalAcceptMimesMiddleware)
-				.use(cookieParser())
-				.use(compress({}))
-				.use(methodOverride())
-				.use(bodyParser.json({
-					limit: '2048mb'
-				}))
-				.use(bodyParser.urlencoded({
-					limit: '2048mb',
-					extended: true,
-					parameterLimit: 500000
-				}));
+			  .use(cors({
+				  credentials: true,
+				  origin: '*',
+				  allowedHeaders: '*',
+				  exposedHeaders: '*'
+			  }))
+			  .use(GlobalAcceptMimesMiddleware)
+			  .use(cookieParser())
+			  .use(compress({}))
+			  .use(methodOverride())
+			  .use(bodyParser.json({
+				  limit: '2048mb'
+			  }))
+			  .use(bodyParser.urlencoded({
+				  limit: '2048mb',
+				  extended: true,
+				  parameterLimit: 500000
+			  }));
 
 		return null;
 	}

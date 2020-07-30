@@ -8,7 +8,7 @@ export interface ILogin {
 }
 
 export interface ICategory {
-	_id: Types.ObjectId
+	_id?: Types.ObjectId
 	name: string
-	image: IFileProperty
+	image: IFileProperty | any
 }

@@ -2,7 +2,7 @@ import {Controller, Post, Req, Res} from "@tsed/common";
 import {MongoDb} from "../services/MongoDb";
 import {Core} from "../config/Core";
 import {Email} from "../services/Email";
-import {User} from "../models/User";
+import {Users} from "../models/Users";
 import {Types} from "mongoose";
 import * as bcCrypt from "bcryptjs";
 import {Status} from "../config/util";
@@ -17,7 +17,7 @@ export class Dev extends Core {
 	@Post('/signUp')
 	async signUp(@Res()res: Res, @Req()req: Req) {
 		let {username, email, password} = req.body
-		let user = new User()
+		let user = new Users()
 		let userID = new Types.ObjectId();
 		user.email = email
 		user.firstName = username
@@ -32,7 +32,7 @@ export class Dev extends Core {
 			uid: userID.toHexString()
 		}).then(async () => {
 			await this.db.User.create(user).then(newUser => {
-				this.done(res, 'New User Successfully Created! You can login now!', {newUser});
+				this.done(res, 'New Users Successfully Created! You can login now!', {newUser});
 			})
 		})
 	}

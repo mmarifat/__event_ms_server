@@ -1,16 +1,10 @@
-import {Controller, Get, Post, Req, Res, UseAuth} from "@tsed/common";
+import {Controller, Get, Req, Res, UseAuth} from "@tsed/common";
 import {MongoDb} from "../services/MongoDb";
 import {FB} from "../services/FB";
 import {Core} from "../config/Core";
 import {Authenticate} from "../middlewares/Authenticate";
-import {User} from "../models/User";
-import {Status} from "../config/util";
-import * as bcCrypt from 'bcryptjs';
-import {Types} from "mongoose";
-import {ValidateRequest} from "../middlewares/ValidateRequest";
 
 @Controller('/')
-@UseAuth(ValidateRequest)
 export class Auth extends Core {
 	constructor(private fb: FB, private db: MongoDb) {
 		super();

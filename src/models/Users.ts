@@ -32,7 +32,7 @@ export class Address implements IAddress {
 		minimize: false
 	}
 })
-export class User implements IUser {
+export class Users implements IUser {
 
 	@ObjectID("_id")
 	_id: Types.ObjectId;
