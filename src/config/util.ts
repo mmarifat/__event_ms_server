@@ -45,3 +45,9 @@ export enum FONT {
 	TimesBoldItalic = 'Times-BoldItalic',
 	ZapfDingbats = 'ZapfDingbats',
 }
+
+export enum Collections {
+	'USERS' = 'users',
+	'CATEGORIES' = 'categories'
+
+}

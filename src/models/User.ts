@@ -2,7 +2,7 @@ import {Email, Enum, Format, Property, PropertyType} from "@tsed/common";
 import {Indexed, Model, ObjectID, Ref, SchemaIgnore} from "@tsed/mongoose";
 import {Types} from "mongoose";
 import {IAddress, IUser} from "../interfaces/IUser";
-import {Status} from "../config/util";
+import {Collections, Status} from "../config/util";
 import {IFileProperty} from "../interfaces/IFileProperty";
 
 
@@ -19,7 +19,7 @@ export class Address implements IAddress {
 
 
 @Model({
-	collection: "users",
+	collection: Collections.USERS,
 	schemaOptions: {
 		toJSON: {
 			getters: true,
