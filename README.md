@@ -1,6 +1,6 @@
 # server
 
-> Event Management System on Ts.ED framework
+> An Event Management System on Ts.ED framework
 
 See [Ts.ED](https://tsed.io) project for more information.
 
