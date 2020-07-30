@@ -1,10 +1,3 @@
-/*
- * Author S Brinta<brrinta@gmail.com>
- * Email: brrinta@gmail.com
- * Web: https://brinta.me
- * Created on : Thursday 28 May, 2020 10:14:52 BDT
- */
-
 import {IMiddleware, Middleware, Next, Req, Res} from "@tsed/common";
 import {ResponseStatus} from "../interfaces/IResponse";
 import {MongoDb} from "../services/MongoDb";
@@ -16,7 +9,7 @@ export class ValidateRequest implements IMiddleware {
 	}
 
 	public async use(@Req() req: Req, @Res()res: Res, @Next() next: Next) {
-		if (await this.db.Setting.findById(Types.ObjectId(String(req.headers.key))).countDocuments() == 1) {
+		if (await this.db.User.findById(Types.ObjectId(String(req.headers.key))).countDocuments() == 1) {
 			// @ts-ignore
 			req.key = req.headers.key || '';
 			next()
