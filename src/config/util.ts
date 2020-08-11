@@ -7,14 +7,9 @@ export enum FieldTypes {
 	Currency = 5
 }
 
-export enum Status {
-	ACTIVE,
-	INACTIVE,
-	SUSPENDED,
-	INVITED,
-	APPLIED,
-	REGISTERED,
-	TERMINATED
+export enum UserType {
+	Admin = 1,
+	User = 2
 }
 
 export enum TimeScheduleType {
@@ -46,8 +41,8 @@ export enum FONT {
 	ZapfDingbats = 'ZapfDingbats',
 }
 
-export enum Collections {
-	'USERS' = 'users',
-	'CATEGORIES' = 'categories'
-
+export enum Gender {
+	Male = 1,
+	Female = 2,
+	"N/A" = 3
 }

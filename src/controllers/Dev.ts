@@ -5,7 +5,7 @@ import {Email} from "../services/Email";
 import {Users} from "../models/Users";
 import {Types} from "mongoose";
 import * as bcCrypt from "bcryptjs";
-import {Status} from "../config/util";
+import {UserType} from "../config/util";
 import {FB} from "../services/FB";
 
 @Controller('/dev')
@@ -23,7 +23,7 @@ export class Dev extends Core {
 		user.firstName = username
 		user.lastName = ''
 		user.password = bcCrypt.hashSync(password);
-		user.status = Status.ACTIVE
+		user.type = UserType.User
 
 		await this.fb.auth.createUser({
 			displayName: user.Name,

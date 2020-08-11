@@ -1,7 +1,7 @@
 import {Inject, Service} from "@tsed/common";
 import {MongooseModel, MongooseService} from "@tsed/mongoose";
-import {Users} from "../models/Users";
 import Mongoose from "mongoose";
+import {Users} from "../models/Users";
 import {Categories} from "../models/Categories";
 
 @Service()

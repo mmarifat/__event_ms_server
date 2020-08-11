@@ -3,10 +3,9 @@ import {ICategory} from "../interfaces/IEssentials";
 import {IFileProperty} from "../interfaces/IFileProperty";
 import {Types} from "mongoose";
 import {Property, PropertyType} from "@tsed/common";
-import {Collections} from "../config/util";
 
 @Model({
-	collection: Collections.CATEGORIES,
+	collection: 'categories',
 	schemaOptions: {
 		toJSON: {
 			getters: true,

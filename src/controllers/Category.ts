@@ -68,9 +68,6 @@ export class Category extends Core {
 				unlink(process.env.PWD + '/public/' + del.image.path, err => {
 					err ? console.log(err) : null
 				})
-				unlink(process.env.PWD + '/public/thumbs/' + del.image.name, err => {
-					err ? console.log(err) : null
-				})
 			}
 			this.done(res, 'Category Successfully Deleted!', null);
 		}).catch(reason => {
